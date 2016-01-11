@@ -26,6 +26,9 @@ gem 'sdoc', '~> 0.4.0', group: :doc
 # Rails authentication with email & password.
 gem 'clearance'
 
+#Securely configure Rails applications
+gem 'figaro'
+
 # Facebook OAuth2 Strategy for OmniAuth.
 gem 'omniauth-facebook'
 
