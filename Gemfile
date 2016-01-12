@@ -23,6 +23,15 @@ gem 'jbuilder', '~> 2.0'
 # bundle exec rake doc:rails generates the API under doc/api.
 gem 'sdoc', '~> 0.4.0', group: :doc
 
+# Rails authentication with email & password.
+gem 'clearance'
+
+#Securely configure Rails applications
+gem 'figaro'
+
+# Facebook OAuth2 Strategy for OmniAuth.
+gem 'omniauth-facebook'
+
 # Use ActiveModel has_secure_password
 # gem 'bcrypt', '~> 3.1.7'
 
