@@ -24,7 +24,7 @@ gem 'jbuilder', '~> 2.0'
 gem 'sdoc', '~> 0.4.0', group: :doc
 
 # Bootstrap for Sass
-gem 'bootstrap-sass', '~> 3.3.6'
+gem 'bootstrap-sass'
 
 
 # Rails authentication with email & password.
