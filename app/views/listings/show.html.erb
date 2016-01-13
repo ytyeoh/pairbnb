@@ -1,0 +1,21 @@
+
+
+<div class="panel-body">
+	
+<div class="panel panel-info">
+<div class="panel-heading">P<%= @listing.title %></div>
+<div class="panel-body">
+	<div class="row">
+	<div class="col-xs-12 col-md-3">Description: </div>
+	<div class="col-xs-6 col-md-6 grey"><%= @listing.desc %> </div>
+	
+	<div class="col-xs-12 col-md-3">Room Type :  </div>
+	<div class="col-xs-6 col-md-6 grey"><%= @listing.room_type %> </div>
+	</div>
+<br>
+	<br>
+	Price : <%= @listing.price %><br>
+	Accommodates : <%= @listing.accommodates %><br>
+	Location : <%= @listing.location %>
+</div>
+</div>

@@ -6,17 +6,18 @@ Rails.application.routes.draw do
   get '/signout' => 'sessions#destroy'
   get '/signin' => 'sessions#new'
  
+    resources :listings
 
+  # resources :home do
+  #   resources :users 
 
-  resources :home do
-    resources :users
 
   #   match '/auth/:provider/callback' => 'sessions#create'
   # match '/signout' => 'sessions#destroy'
   # match '/signin' => 'sessions#new'
 
 
-  end
+
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 
