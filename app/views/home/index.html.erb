@@ -1,6 +1,6 @@
 <h1>Welcome to Pair BNB</h1>
 <p>Put yuor empty room here to rent</p>
-<%= link_to "View All Listing", sign_in_path, class: 'btn btn-primary'%>
+<%= link_to "View All Listing", listings_path, class: 'btn btn-primary'%><br>
   <% flash.each do |key, msg| %>
     <%= content_tag :li, msg, id: key %>
   <% end %>
