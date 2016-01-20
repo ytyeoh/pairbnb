@@ -30,7 +30,6 @@ gem 'bootstrap-sass'
 # upload files from Ruby applications
 gem 'carrierwave', github: 'carrierwaveuploader/carrierwave'
 
-
 # Rails authentication with email & password.
 gem 'clearance'
 
