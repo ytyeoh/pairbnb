@@ -3,8 +3,7 @@ source 'https://rubygems.org'
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '4.2.5'
-# Use sqlite3 as the database for Active Record
-gem 'sqlite3'
+gem 'pg'
 # Use SCSS for stylesheets
 gem 'sass-rails', '~> 5.0'
 # Use Uglifier as compressor for JavaScript assets
@@ -18,10 +17,18 @@ gem 'coffee-rails', '~> 4.1.0'
 gem 'jquery-rails'
 # Turbolinks makes following links in your web application faster. Read more: https://github.com/rails/turbolinks
 gem 'turbolinks'
+gem "braintree"
+# gem 'foundation-rails'
 # Build JSON APIs with ease. Read more: https://github.com/rails/jbuilder
 gem 'jbuilder', '~> 2.0'
 # bundle exec rake doc:rails generates the API under doc/api.
 gem 'sdoc', '~> 0.4.0', group: :doc
+
+# Bootstrap for Sass
+gem 'bootstrap-sass'
+
+# upload files from Ruby applications
+gem 'carrierwave', github: 'carrierwaveuploader/carrierwave'
 
 # Rails authentication with email & password.
 gem 'clearance'
@@ -32,6 +39,16 @@ gem 'figaro'
 # Facebook OAuth2 Strategy for OmniAuth.
 gem 'omniauth-facebook'
 
+gem 'mail'
+gem 'sidekiq'
+
+gem 'bootstrap'
+gem 'gon', '~> 5.1.2'
+
+gem 'momentjs-rails', '>= 2.9.0'
+gem 'bootstrap3-datetimepicker-rails', '~> 4.14.30'
+# gem "letter_opener", :group => :development
+
 # Use ActiveModel has_secure_password
 # gem 'bcrypt', '~> 3.1.7'
 
@@ -40,10 +57,32 @@ gem 'omniauth-facebook'
 
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development
+gem 'searchkick'
+gem 'elasticsearch-model'
+gem 'elasticsearch-rails'
+
+gem 'puma'
 
 group :development, :test do
-  # Call 'byebug' anywhere in the code to stop execution and get a debugger console
-  gem 'byebug'
+    gem 'byebug'
+    gem 'guard'
+    gem 'guard-rspec'
+    gem 'guard-puma'
+    gem 'rspec'
+    gem 'rspec-rails'
+    gem 'shoulda-matchers'
+    gem 'factory_girl_rails'
+    gem 'shoulda-callback-matchers'
+
+    # For developer's code improvements
+    gem 'colored'
+    gem 'traceroute'
+    gem 'rails_best_practices'
+    gem 'rubocop'
+    gem 'rubycritic'
+    gem 'brakeman'
+    gem 'bullet'
+    # gem 'rack-mini-profiler'
 end
 
 group :development do

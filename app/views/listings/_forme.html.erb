@@ -1,0 +1,40 @@
+<div class="panel panel-info">
+<div class="panel-heading"><%= @listing.title %></div>
+	<div class="panel-body">
+		<%= form_for :@listing, url: listing_path(@listing), html: { method: "patch", multipart: true, class: "form-horizontal"} do |form| %>
+	<div class="row">
+		<div class="col-xs-12 col-md-3">Description: </div>
+		<div class="col-xs-6 col-md-6 grey"><%= form.text_field :desc, type: 'string' , class:'form-control',:value => @listing.desc %> </div>
+		<div class="col-xs-12 col-md-3">Room Type :  </div>
+		<div class="col-xs-6 col-md-6 grey"><%= form.text_field :room_type, type: 'string' , class:'form-control',:value => @listing.room_type %>  </div>
+		<div class="col-xs-12 col-md-3">Price :  </div>
+		<div class="col-xs-6 col-md-6 grey"><%= form.number_field :price, type: 'string' , class:'form-control',:value => @listing.price %>   </div>
+		<div class="col-xs-12 col-md-3">Accommodates :</div>
+		<div class="col-xs-6 col-md-6 grey"><%= form.number_field :accommodates, type: 'string' , class:'form-control',:value => @listing.accommodates %>  </div>
+		<div class="col-xs-12 col-md-3">Location : </div>
+		<div class="col-xs-6 col-md-6 grey"><%= form.text_field :location, type: 'string' , class:'form-control',:value => @listing.location %>  </div>
+		<div class="col-xs-12 col-md-3">Image : </div>
+
+		<% @listing.avatars.each_with_index do |a,i| %>
+		<div class="col-xs-12 col-md-3"> </div>
+		<div class="col-xs-6 col-md-6 grey">
+			<%= image_tag(@listing.avatars[i].url, width: "100%") %> 
+			<label>
+			<%= check_box_tag("delete-#{i}", i) %>
+	      Remove avatar
+	    </label>
+			</div>
+		<% end %>
+
+	 	<div class="col-xs-12 col-md-3"><%= form.label :Upload_image %></div>
+		<div class="col-xs-6 col-md-6 grey">
+	    	<%= form.file_field :avatars, multiple: true %>
+	    </div>
+
+	 	<div class="col-xs-12 col-md-3"> </div>
+		<div class="col-xs-6 col-md-6 grey">
+	    	<%= form.submit "Update Your Room", class: 'btn btn-primary' %>
+	  	</div>
+		<%end%>
+	</div>
+</div>

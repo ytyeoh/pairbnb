@@ -1,0 +1,37 @@
+<div class="row">
+	<div class="listings-search">
+		<h1>Search Room</h1>
+			<%= form_tag listings_path, method: :get do %>
+		<div class="form-group">
+			<%= text_field_tag :query, params[:query], class: 'form-control', id: "listing-search", autocomplete: "off" %>
+			<%= submit_tag 'Search', class: 'btn btn-primary' %>
+		</div>
+		<% end %>
+	</div>
+ <% @listings.each do |listing| %>
+  <a href= "/listings/<%= listing.id %>">
+  <div class="large-8 columns">
+    <div class="col-xs-12 col-md-3">Description: </div>
+	<div class="col-xs-6 col-md-6 grey"><%= listing.desc %> </div>
+	<div class="col-xs-12 col-md-3">Room Type :  </div>
+	<div class="col-xs-6 col-md-6 grey"><%= listing.room_type %> </div>
+	<div class="col-xs-12 col-md-3">Price :  </div>
+	<div class="col-xs-6 col-md-6 grey"><%= listing.price %> </div>
+	<div class="col-xs-12 col-md-3">Accommodates :</div>
+	<div class="col-xs-6 col-md-6 grey"> <%= listing.accommodates %> </div>
+	<div class="col-xs-12 col-md-3">Location : </div>
+	<div class="col-xs-6 col-md-6 grey"> <%= listing.location %> </div>
+	<div class="col-xs-12 col-md-3">Image : </div>
+
+	
+	<div class="col-xs-12 col-md-3"> </div>
+	<div class="col-xs-6 col-md-6 grey">
+		<%= image_tag(listing.avatars[0].url, width: "100%") %> 
+		</div>
+	
+  </div>
+
+</a>
+<br><br>
+  <% end %>
+</div>

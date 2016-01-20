@@ -1,0 +1,34 @@
+
+
+
+	
+<div class="panel panel-info">
+<div class="panel-heading"><%= @listing.title %></div>
+	<div class="panel-body">
+		<%= link_to "Edit", edit_listing_path, class: "btn btn-info"  if current_user.present? && current_user.id == @listing.user_id%>
+		<%= link_to "Delete", @listing, method: :delete, data: { confirm: 'Are you sure?' } , class: "btn btn-danger"  if current_user.present? && current_user.id == @listing.user_id%>
+		<%= link_to "Book Now!", new_listing_reservation_path(@listing), class: "btn btn-danger"  if current_user.present? && current_user.id != @listing.user_id%>
+
+
+	<div class="row">
+	<div class="col-xs-12 col-md-3">Description: </div>
+	<div class="col-xs-6 col-md-6 grey"><%= @listing.desc %> </div>
+	<div class="col-xs-12 col-md-3">Room Type :  </div>
+	<div class="col-xs-6 col-md-6 grey"><%= @listing.room_type %> </div>
+	<div class="col-xs-12 col-md-3">Price :  </div>
+	<div class="col-xs-6 col-md-6 grey"><%= @listing.price %> </div>
+	<div class="col-xs-12 col-md-3">Accommodates :</div>
+	<div class="col-xs-6 col-md-6 grey"> <%= @listing.accommodates %> </div>
+	<div class="col-xs-12 col-md-3">Location : </div>
+	<div class="col-xs-6 col-md-6 grey"> <%= @listing.location %> </div>
+	<div class="col-xs-12 col-md-3">Image : </div>
+
+	<% @listing.avatars.each_with_index do |a,i| %>
+	<div class="col-xs-12 col-md-3"> </div>
+	<div class="col-xs-6 col-md-6 grey">
+		<%= image_tag(@listing.avatars[i].url, width: "100%") %> 
+		</div><% end %>
+		
+	
+	</div>
+	</div>
