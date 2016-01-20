@@ -17,4 +17,10 @@ class SessionsController <  Clearance::SessionsController
     reset_session
     redirect_to root_url, notice: 'Signed out!'
   end
+
+  private
+  def user_params
+
+    params.require(:user).permit(:name, :email, :avatar, :password)
+  end
 end
