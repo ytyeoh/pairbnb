@@ -1,12 +1,12 @@
 <h1>Welcome to Pair BNB</h1>
 <p>Put yuor empty room here to rent</p>
-
+<%= link_to "View All Listing", sign_in_path, class: 'btn btn-primary'%>
   <% flash.each do |key, msg| %>
     <%= content_tag :li, msg, id: key %>
   <% end %>
 	<% if signed_in? %>
 		<%= current_user.email %>
-		<%= button_to "Sign out", sign_out_path, method: :delete, class: 'btn btn-primary' %>
+		<%= button_to "Sign out", listings_path, method: :delete, class: 'btn btn-primary' %>
 	<% else %>
 		<%= link_to "Sign in", sign_in_path, class: 'btn btn-primary'%>
 	<% end %>
