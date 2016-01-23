@@ -60,6 +60,8 @@ gem 'bootstrap3-datetimepicker-rails', '~> 4.14.30'
 gem 'searchkick'
 gem 'elasticsearch-model'
 gem 'elasticsearch-rails'
+gem "fog-aws"
+gem 'fog-google'
 
 gem 'puma'
 
