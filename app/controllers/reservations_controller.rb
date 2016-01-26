@@ -32,7 +32,7 @@ class ReservationsController < ApplicationController
       # # ReservationJob.perform_later(@reservation)
       # @client_token = Braintree::ClientToken.generate(:customer_id => current_user.id)
       # ReservationMailer.booking_email(@reservation).deliver_now
-      # byebug
+
 
       redirect_to listing_reservation_path(@listing_id, @reservation.id)
 
