@@ -18,3 +18,4 @@
 
 # Ignore application configuration
 /config/secretapp.yml
+/config/application.yml

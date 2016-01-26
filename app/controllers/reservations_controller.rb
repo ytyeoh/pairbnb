@@ -12,6 +12,7 @@ class ReservationsController < ApplicationController
   def show
 
     @braintree_token = generate_client_token
+    byebug
     @reservation = Reservation.find(params[:id])
     @listing = Listing.find(params[:listing_id])
   end
